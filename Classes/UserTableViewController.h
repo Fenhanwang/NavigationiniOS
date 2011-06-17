@@ -11,8 +11,10 @@
 
 @interface UserTableViewController : UITableViewController {
 	NSString *key;
+	NSDictionary *data;
 }
 
+@property(nonatomic, retain) NSDictionary *data;
 @property(nonatomic, retain) NSString *key;
 
 @end

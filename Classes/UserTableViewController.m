@@ -11,6 +11,7 @@
 
 @implementation UserTableViewController
 
+@synthesize data;
 @synthesize key;
 
 
@@ -32,20 +33,27 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	NSArray *keys=[NSArray arrayWithObjects:@"Home",@"Work",nil];
+	NSArray *homeValue=[NSArray arrayWithObjects:@"Beijing",@"Shanghai",nil];
+	NSArray *workValue=[NSArray arrayWithObjects:@"CTO",@"CEO",nil];
+	NSArray *values=[NSArray arrayWithObjects:homeValue,workValue,nil];
+	data=[[NSDictionary alloc] initWithObjects:values forKeys:keys];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-*/
 
-/*
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	[self.tableView reloadData];
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -81,7 +89,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 2;
+    return [[self.data valueForKey:self.key] count];
 }
 
 
@@ -94,9 +102,9 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    NSLog(@"%@", self.key);
     // Configure the cell...
-    
+    cell.textLabel.text=[[data valueForKey:self.key] objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -173,6 +181,8 @@
 
 
 - (void)dealloc {
+	[data release];
+	[key release];
     [super dealloc];
 }
 

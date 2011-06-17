@@ -11,7 +11,6 @@
 
 @implementation RootViewController
 
-@synthesize data;
 @synthesize userTableViewController;
 
 
@@ -22,11 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	NSArray *keys=[NSArray arrayWithObjects:@"Home",@"Work",nil];
-	NSArray *homeValue=[NSArray arrayWithObjects:@"Beijing",@"Shanghai",nil];
-	NSArray *workValue=[NSArray arrayWithObjects:@"CTO",@"CEO",nil];
-	NSArray *values=[NSArray arrayWithObjects:homeValue,workValue,nil];
-	data=[[NSDictionary alloc] initWithObjects:values forKeys:keys];
+	
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -75,7 +70,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [data count];
+    return 2;
 }
 
 
@@ -158,16 +153,12 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
-	switch (indexPath.row) {
-		case 0:
-			self.userTableViewController.key=@"Home";
+	if(0==indexPath.row) {
 			self.userTableViewController.title=@"Home";
-			break;
-		case 1:
-			self.userTableViewController.key=@"Work";
+			self.userTableViewController.key=@"Home";
+	}else if(1==indexPath.row){
 			self.userTableViewController.title=@"Work";
-			break;
-
+			self.userTableViewController.key=@"Work";
 	}
 	[self.navigationController pushViewController:self.userTableViewController animated:YES];
 }
