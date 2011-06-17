@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class UserTableViewController;
 
 @interface RootViewController : UITableViewController {
 	NSDictionary *data;
+	UserTableViewController *userTableViewController;
 }
 
 @property(nonatomic, retain) NSDictionary *data;
+@property(nonatomic, retain) IBOutlet UserTableViewController *userTableViewController;
 
 @end

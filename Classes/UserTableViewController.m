@@ -1,38 +1,45 @@
 //
-//  RootViewController.m
+//  UserTableViewController.m
 //  Navigation
 //
 //  Created by DuYabo on 11-6-17.
 //  Copyright 2011 Mobroad. All rights reserved.
 //
 
-#import "RootViewController.h"
 #import "UserTableViewController.h"
 
-@implementation RootViewController
 
-@synthesize data;
-@synthesize userTableViewController;
+@implementation UserTableViewController
+
+@synthesize key;
+
+
+#pragma mark -
+#pragma mark Initialization
+
+/*
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization.
+    }
+    return self;
+}
+*/
 
 
 #pragma mark -
 #pragma mark View lifecycle
 
-
+/*
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	NSArray *keys=[NSArray arrayWithObjects:@"Home",@"Work",nil];
-	NSArray *homeValue=[NSArray arrayWithObjects:@"Beijing",@"Shanghai",nil];
-	NSArray *workValue=[NSArray arrayWithObjects:@"CTO",@"CEO",nil];
-	NSArray *values=[NSArray arrayWithObjects:homeValue,workValue,nil];
-	data=[[NSDictionary alloc] initWithObjects:values forKeys:keys];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	self.title=@"Case";
 }
-
+*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,36 +53,35 @@
 */
 /*
 - (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 */
 /*
 - (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 */
-
 /*
- // Override to allow orientations other than the default portrait orientation.
+// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    // Return YES for supported orientations.
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
- */
+*/
 
 
 #pragma mark -
 #pragma mark Table view data source
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
     return 1;
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [data count];
+    // Return the number of rows in the section.
+    return 2;
 }
 
 
@@ -89,19 +95,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	// Configure the cell.
-	cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-	
-	switch (indexPath.row) {
-		case 0:
-			cell.textLabel.text=@"Home";
-			break;
-		case 1h:
-			cell.textLabel.text=@"Work";
-			break;
-
-	}
-
+    // Configure the cell...
+    
     return cell;
 }
 
@@ -150,26 +145,14 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-	switch (indexPath.row) {
-		case 0:
-			self.userTableViewController.key=@"Home";
-			self.userTableViewController.title=@"Home";
-			break;
-		case 1:
-			self.userTableViewController.key=@"Work";
-			self.userTableViewController.title=@"Work";
-			break;
-
-	}
-	[self.navigationController pushViewController:self.userTableViewController animated:YES];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    */
 }
 
 
@@ -180,7 +163,7 @@
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
-    // Relinquish ownership any cached data, images, etc that aren't in use.
+    // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {

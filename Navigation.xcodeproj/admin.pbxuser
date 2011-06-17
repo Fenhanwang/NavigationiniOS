@@ -1,15 +1,47 @@
 // !$*UTF8*$!
 {
+	1D3623240D0F684500981E51 /* NavigationAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 541}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 460}";
+		};
+	};
+	1D3623250D0F684500981E51 /* NavigationAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1118}}";
+			sepNavSelRange = "{241, 0}";
+			sepNavVisRange = "{1237, 1388}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* Navigation */ = {
 		activeExec = 0;
 		executables = (
 			840D0AF813AB300000C09C27 /* Navigation */,
 		);
 	};
+	28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 541}}";
+			sepNavSelRange = "{286, 0}";
+			sepNavVisRange = "{0, 293}";
+		};
+	};
+	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{4071, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4122, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4172, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 4868}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 2418}}";
+			sepNavSelRange = "{247, 0}";
+			sepNavVisRange = "{3337, 1143}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 840D0AF813AB300000C09C27 /* Navigation */;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Navigation */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Navigation */,
+		);
 		codeSenseManager = 840D0B1113AB300900C09C27 /* Code sense */;
 		executables = (
 			840D0AF813AB300000C09C27 /* Navigation */,
@@ -85,5 +117,20 @@
 	840D0B1113AB300900C09C27 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	840D0B1A13AB391200C09C27 /* UserTableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 541}}";
+			sepNavSelRange = "{287, 0}";
+			sepNavVisRange = "{0, 294}";
+		};
+	};
+	840D0B1B13AB391200C09C27 /* UserTableViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = \"number of sections\";\n            r = \"{1696, 22}\";\n            s = 1;\n        },\n                {\n            l = \"number of rows in section\";\n            r = \"{1875, 29}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4005, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4056, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4106, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 4809}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 2509}}";
+			sepNavSelRange = "{233, 0}";
+			sepNavVisRange = "{0, 880}";
+		};
 	};
 }
