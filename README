@@ -1,0 +1,10 @@
+This is a simple app for show how to use navigation in iOS apps.
+
+
+** Tips1. User ViewController.title 
+
+The attribute title of ViewController can help us define the navigation of current and last view
+
+** Tips2. ReloadTableViews
+
+We must revoke the tableView's method reloadData so we could get the right data in the current dynamic data table views
